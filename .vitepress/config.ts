@@ -67,7 +67,7 @@ export default function () {
       },
       socialLinks: [{ icon: "github", link: repositoryURL }],
       footer: {
-        message: "Released under the MIT License.",
+        message: "Released under the MIT License. Not affiliated with Too Lost.",
         copyright:
           "Copyright (c) 2026-present TooLostJS Maintainers and Contributors",
       },
