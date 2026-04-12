@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+:root {
+  --toolost-teal-900: hsl(184, 61%, 15%);
+  --toolost-teal-700: #0f766e;
+  --toolost-teal-500: #14b8a6;
+  --toolost-sun-500: #f4c95d;
+  --toolost-sand-100: #fdf6e3;
+  --toolost-home-nav-inner-pad-tablet: 3rem;
+  --toolost-home-nav-inner-pad-desktop: 11.5rem;
+
+  --vp-font-family-base:
+    "Space Grotesk", "Trebuchet MS", "Segoe UI", sans-serif;
+  --vp-font-family-mono:
+    "IBM Plex Mono", "Consolas", "Lucida Console", monospace;
+
+  --vp-c-brand-1: var(--toolost-teal-500);
+  --vp-c-brand-2: #2dd4bf;
+  --vp-c-brand-3: #5eead4;
+
+  --vp-button-brand-bg: var(--toolost-teal-700);
+  --vp-button-brand-hover-bg: #115e59;
+  --vp-button-brand-active-bg: #134e4a;
+
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    118deg,
+    var(--toolost-teal-900) 8%,
+    var(--toolost-teal-500) 58%,
+    var(--toolost-sun-500) 100%
+  );
+
+  --vp-c-default-soft: rgba(20, 184, 166, 0.12);
+}
+
+.dark {
+  --vp-c-brand-1: #2dd4bf;
+  --vp-c-brand-2: #5eead4;
+  --vp-c-brand-3: #99f6e4;
+  --vp-button-brand-bg: #0f766e;
+  --vp-button-brand-hover-bg: #14b8a6;
+  --vp-home-hero-name-background: linear-gradient(
+    118deg,
+    #f0fdfa 8%,
+    #5eead4 56%,
+    #f4c95d 100%
+  );
+  --vp-c-default-soft: rgba(45, 212, 191, 0.14);
+}
+
+.VPNavBar {
+  background: transparent;
+  border-bottom-color: transparent;
+}
+
+.VPNavBarTitle .title {
+  letter-spacing: 0.02em;
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  .VPNavBar.home .wrapper {
+    padding-inline: var(--toolost-home-nav-inner-pad-laptop);
+  }
+}
+
+@media (min-width: 1280px) {
+  .VPNavBar.home .wrapper {
+    padding-inline: var(--toolost-home-nav-inner-pad-desktop);
+  }
+}
+
+.VPHome {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+}
+
+.VPHome::before {
+  content: "";
+  position: absolute;
+  inset: -200px -10vw 0;
+  pointer-events: none;
+  z-index: -3;
+  background:
+    radial-gradient(
+      circle at 14% 9%,
+      rgba(20, 184, 166, 0.24),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 86% 12%,
+      rgba(244, 201, 93, 0.22),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(45, 212, 191, 0.11),
+      transparent 46%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(253, 246, 227, 0.94) 0%,
+      rgba(248, 250, 251, 0.88) 34%,
+      rgba(245, 247, 248, 0.62) 58%,
+      rgba(245, 247, 248, 0.22) 80%,
+      rgba(245, 247, 248, 0) 100%
+    );
+}
+
+.dark .VPHome::before {
+  background:
+    radial-gradient(circle at 14% 9%, rgba(20, 184, 166, 0.3), transparent 38%),
+    radial-gradient(
+      circle at 86% 12%,
+      rgba(244, 201, 93, 0.17),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(45, 212, 191, 0.09),
+      transparent 46%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(8, 18, 20, 0.92) 0%,
+      rgba(10, 20, 24, 0.86) 34%,
+      rgba(11, 18, 26, 0.66) 58%,
+      rgba(11, 18, 26, 0.28) 80%,
+      rgba(11, 18, 26, 0) 100%
+    );
+}
+
+.VPHome::after {
+  content: "";
+  position: absolute;
+  inset: -70px -8vw 0;
+  pointer-events: none;
+  z-index: -2;
+  background-image:
+    linear-gradient(to right, rgba(20, 184, 166, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 184, 166, 0.15) 1px, transparent 1px);
+  background-size: 38px 38px;
+  background-position: center top;
+  opacity: 0.44;
+  -webkit-mask-image: radial-gradient(
+    circle at 50% 18%,
+    rgba(0, 0, 0, 0.96) 0%,
+    rgba(0, 0, 0, 0.72) 18%,
+    rgba(0, 0, 0, 0.34) 34%,
+    rgba(0, 0, 0, 0.14) 45%,
+    transparent 58%
+  );
+  mask-image: radial-gradient(
+    circle at 50% 18%,
+    rgba(0, 0, 0, 0.96) 0%,
+    rgba(0, 0, 0, 0.72) 18%,
+    rgba(0, 0, 0, 0.34) 34%,
+    rgba(0, 0, 0, 0.14) 45%,
+    transparent 58%
+  );
+}
+
+.dark .VPHome::after {
+  background-image:
+    linear-gradient(to right, rgba(94, 234, 212, 0.17) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(94, 234, 212, 0.17) 1px, transparent 1px);
+  opacity: 0.38;
+}
+
+.VPHome .VPHero {
+  position: relative;
+  padding-top: clamp(22px, 4vw, 48px);
+}
+
+.VPHome .VPHero .container {
+  padding-top: 4rem;
+}
+
+.VPHero .name {
+  font-size: clamp(2.5rem, 4.9vw, 4.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+}
+
+.VPHero .text {
+  color: var(--vp-c-text-1);
+  letter-spacing: -0.014em;
+}
+
+.VPHero .tagline {
+  max-width: 64ch;
+  font-size: 1.13rem;
+  line-height: 1.6;
+}
+
+.VPButton.brand {
+  border-radius: 999px;
+  padding-inline: 20px;
+  border: 1px solid rgba(20, 184, 166, 0.52);
+  box-shadow: 0 10px 22px rgba(10, 55, 57, 0.22);
+}
+
+.VPButton.alt {
+  border-radius: 999px;
+  border-color: rgba(20, 184, 166, 0.6);
+  background: rgba(18, 33, 42, 0.54);
+}
+
+.dark .VPButton.alt {
+  background: rgba(8, 22, 26, 0.7);
+}
+
+.VPFeatures {
+  margin-top: 34px;
+}
+
+.VPFeature {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  border: 1px solid rgba(20, 184, 166, 0.24);
+  background: linear-gradient(
+    150deg,
+    rgba(252, 255, 254, 0.96),
+    rgba(255, 250, 239, 0.98)
+  );
+}
+
+.VPFeature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    160deg,
+    rgba(20, 184, 166, 0.22),
+    rgba(255, 255, 255, 0) 42%
+  );
+}
+
+.dark .VPFeature {
+  background: linear-gradient(
+    150deg,
+    rgba(16, 29, 35, 0.96),
+    rgba(21, 34, 36, 0.98)
+  );
+}
+
+.VPFeature .icon {
+  background-color: transparent;
+}
+
+.VPFeature .title {
+  font-weight: 700;
+}
+
+.VPFeature .icon {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+}
+
+.VPDoc.has-aside .content-container {
+  max-width: 860px;
+}
+
+@media (max-width: 960px) {
+  .VPHome::before {
+    inset: -120px -10vw 0;
+  }
+
+  .VPHome::after {
+    inset: -40px -12vw 0;
+    background-size: 28px 28px;
+    -webkit-mask-image: radial-gradient(
+      circle at 50% 14%,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.62) 22%,
+      rgba(0, 0, 0, 0.26) 39%,
+      transparent 56%
+    );
+    mask-image: radial-gradient(
+      circle at 50% 14%,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.62) 22%,
+      rgba(0, 0, 0, 0.26) 39%,
+      transparent 56%
+    );
+  }
+
+  .VPHome .VPHero .container {
+    border-radius: 24px;
+  }
+
+  .VPHero .VPImage {
+    padding: 14px;
+    border-radius: 20px;
+  }
+}
