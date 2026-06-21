@@ -1,6 +1,6 @@
 {
   "name": "toolost-docs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Documentation website for the Toolost JavaScript and TypeScript SDK",
   "type": "module",
   "scripts": {
